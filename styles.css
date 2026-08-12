@@ -1,0 +1,46 @@
+body{
+  padding: 50px;
+  background-image: url('https://cdn.dribbble.com/userupload/10090129/file/original-4a9356dc6fa84c62947182c21f71f7d3.jpg');
+  background-size: 900px 600px;
+  background-size: fixed;
+}
+
+.title {
+  color: #588a9f;
+  background-color: #f0f8ff;
+  position: absolute;
+  font-family: Verdana, sans-serif;
+  padding: 10px;
+}
+.div-1{
+  margin-left:50%;
+  margin-top: 22%;
+  position: fixed;
+}
+.div-2{
+  margin-bottom:10%;
+  margin-right:5%;
+}
+.div-3{
+  margin-left:80%;
+}
+#counter {
+  background-color: lightblue;
+  color: black;
+  padding: 10px;
+  margin-top:20%;
+  text-align: center;
+}
+.alertPopUp{
+  background-color: aquamarine;
+  padding: 5px;
+}
+.wrongAnswer{
+  background-color: red;
+  padding:5px;
+}
+.Congrats{
+  background-color:mediumpurple;
+  padding: 30px;
+}
+

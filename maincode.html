@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PRETECH Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <h1 class="title">pick the correct items!</h1>
+
+
+  <body>
+      <div class="div-1">
+        <button1 type="button" onclick="Pan()">
+        <img src=https://pngimg.com/uploads/frying_pan/frying_pan_PNG8340.png
+        alt="Button Image" style="width: 100px; height: 100px;">
+        </button>
+      </div>
+
+
+      <div class="div-2">
+        <button1 type="button" onclick="Pot()">
+        <img src=https://static.vecteezy.com/system/resources/previews/009/391/594/original/cooking-pot-clipart-design-illustration-free-png.png
+        alt="Button Image" style="width: 100px; height: 100px;">
+        </button>
+      </div>
+     
+      <div class="div-3">
+        <button1 type="button" onclick="Spatula()">
+        <img src=https://img.magnific.com/premium-vector/spatula-cartoon-transparent-background_1047054-19584.jpg
+        alt="Button Image" style="width: 100px; height: 100px;">
+        </button>
+      </div>
+  </body>
+
+
+  <div id="chooseAnotherItemPopUp" class="alertPopUp" style="display: none;">
+    please choose another item, this was already selected
+  </div>
+
+
+   <div id="wrongAnswer" class="wrongAnswer" style="display: none;">
+    I don't think we should use that...
+  </div>
+
+
+  <div id=Congrats class=Congrats style='display:none'>
+    Congratulations! You have all the materials you need. You may
+    now proceed to the next page.
+  </div>
+
+
+  <script>
+      var clicks = 0;
+      var pan=0;
+      var pot=0;
+      var spatula=0;
+      function showAlert(){
+       document.getElementById("chooseAnotherItemPopUp").style.display="block";
+       setTimeout(() => {
+        chooseAnotherItemPopUp.style.display = "none";}, 3000);
+      }
+      function hideAlert(){
+        document.getElementById("chooseAnotherItemPopUp").style.display="none";
+      }
+
+
+      function wrongAnswershow(){
+       document.getElementById("wrongAnswer").style.display="block";
+       setTimeout(() => {
+        wrongAnswer.style.display = "none";}, 2000);
+      }
+      function wrongAnswerhide(){
+        document.getElementById("wrongAnswer").style.display="none";
+      }
+     
+      function Pan(){
+          pan+=1;
+          if (pan==1){
+          clicks++;
+          checkWin();
+          document.getElementById("counter").innerHTML = "You have" + clicks + "in cart"
+          }else{
+          showAlert();
+          }
+      }
+       function Pot(){
+          pot+=1;
+          if (pot==1){
+          wrongAnswershow();
+          }else{
+          showAlert();
+          }
+      }
+      function Spatula(){
+          spatula+=1;
+          if (spatula==1){
+          clicks++;
+          checkWin();
+          document.getElementById("counter").innerHTML = "You have " + clicks + " in cart"
+          }else{
+          showAlert();
+          }
+      }
+      function checkWin(){
+        if (clicks==2){
+       setTimeout(() => {
+        Congrats.style.display = "block";}, 2000);
+      }
+      }
+     
+  </script>
+  <h2 id="counter"> You have 0 things selected</h2>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
