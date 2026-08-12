@@ -1,140 +1,118 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PRETECH Demo</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <h1 class="title">pick the correct items!</h1>
 
   <body>
-      <div class="div-1">
-        <button type="button" onclick="Pan()">
-        <img src=https://pngimg.com/uploads/frying_pan/frying_pan_PNG8340.png
-        alt="Button Image" style="width: 100px; height: 100px;">
-        </button>
-      </div>
+    <h1 class="title">Pick the correct items!</h1>
 
+    <div class="items">
+      <button class="item-button pan-button" type="button" onclick="Pan()">
+        <img src="pan.png" alt="Frying pan" />
+      </button>
 
-      <div class="div-2">
-        <button type="button" onclick="Pot()">
-        <img src=https://static.vecteezy.com/system/resources/previews/009/391/594/original/cooking-pot-clipart-design-illustration-free-png.png
-        alt="Button Image" style="width: 100px; height: 100px;">
-        </button>
-      </div>
-     
-      <div class="div-3">
-        <button type="button" onclick="Spatula()">
-        <img src=https://img.magnific.com/premium-vector/spatula-cartoon-transparent-background_1047054-19584.jpg
-        alt="Button Image" style="width: 100px; height: 100px;">
-        </button>
-      </div>
-  </body>
+      <button class="item-button" type="button" onclick="Pot()">
+        <img src="choppingboard.png" alt="Chopping board" />
+      </button>
 
+      <button class="item-button" type="button" onclick="Spatula()">
+        <img src="choppingboard.png" alt="Spatula" />
+      </button>
+    </div>
 
-  <div id="chooseAnotherItemPopUp" class="alertPopUp" style="display: none;">
-    please choose another item, this was already selected
-  </div>
+    <h2 id="counter">You have 0 things selected</h2>
 
+    <div
+      id="chooseAnotherItemPopUp"
+      class="alertPopUp"
+      style="display: none"
+    >
+      Please choose another item; this was already selected.
+    </div>
 
-   <div id="wrongAnswer" class="wrongAnswer" style="display: none;">
-    I don't think we should use that...
-  </div>
+    <div id="wrongAnswer" class="wrongAnswer" style="display: none">
+      I don't think we should use that...
+    </div>
 
+    <div id="Congrats" class="Congrats" style="display: none">
+      Congratulations! You have all the materials you need. You may now proceed
+      to the next page.
+    </div>
 
-  <div id=Congrats class=Congrats style='display:none'>
-    Congratulations! You have all the materials you need. You may
-    now proceed to the next page.
-  </div>
+    <script>
+      let clicks = 0;
+      let pan = 0;
+      let pot = 0;
+      let spatula = 0;
 
+      function showAlert() {
+        const popup = document.getElementById("chooseAnotherItemPopUp");
+        popup.style.display = "block";
 
-  <script>
-      var clicks = 0;
-      var pan=0;
-      var pot=0;
-      var spatula=0;
-      function showAlert(){
-       document.getElementById("chooseAnotherItemPopUp").style.display="block";
-       setTimeout(() => {
-        chooseAnotherItemPopUp.style.display = "none";}, 3000);
-      }
-      function hideAlert(){
-        document.getElementById("chooseAnotherItemPopUp").style.display="none";
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 3000);
       }
 
+      function wrongAnswershow() {
+        const wrongAnswer = document.getElementById("wrongAnswer");
+        wrongAnswer.style.display = "block";
 
-      function wrongAnswershow(){
-       document.getElementById("wrongAnswer").style.display="block";
-       setTimeout(() => {
-        wrongAnswer.style.display = "none";}, 2000);
+        setTimeout(() => {
+          wrongAnswer.style.display = "none";
+        }, 2000);
       }
-      function wrongAnswerhide(){
-        document.getElementById("wrongAnswer").style.display="none";
+
+      function updateCounter() {
+        document.getElementById("counter").textContent =
+          "You have " + clicks + " in cart";
       }
-     
-      function Pan(){
-          pan+=1;
-          if (pan==1){
+
+      function Pan() {
+        pan++;
+
+        if (pan === 1) {
           clicks++;
+          updateCounter();
           checkWin();
-          document.getElementById("counter").innerHTML = "You have" + clicks + "in cart"
-          }else{
+        } else {
           showAlert();
-          }
+        }
       }
-       function Pot(){
-          pot+=1;
-          if (pot==1){
+
+      function Pot() {
+        pot++;
+
+        if (pot === 1) {
           wrongAnswershow();
-          }else{
+        } else {
           showAlert();
-          }
+        }
       }
-      function Spatula(){
-          spatula+=1;
-          if (spatula==1){
+
+      function Spatula() {
+        spatula++;
+
+        if (spatula === 1) {
           clicks++;
+          updateCounter();
           checkWin();
-          document.getElementById("counter").innerHTML = "You have " + clicks + " in cart"
-          }else{
+        } else {
           showAlert();
-          }
+        }
       }
-      function checkWin(){
-        if (clicks==2){
-       setTimeout(() => {
-        Congrats.style.display = "block";}, 2000);
+
+      function checkWin() {
+        if (clicks === 2) {
+          setTimeout(() => {
+            document.getElementById("Congrats").style.display = "block";
+          }, 2000);
+        }
       }
-      }
-     
-  </script>
-  <h2 id="counter"> You have 0 things selected</h2>
+    </script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
