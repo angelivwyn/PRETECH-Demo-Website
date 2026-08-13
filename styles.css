@@ -24,7 +24,8 @@ body {
 
 .title {
   width: fit-content;
-  max-width: 100%;
+  max-width: 250px;
+  max-height:250px;
   margin: 0 auto;
   padding: 10px;
 
@@ -48,6 +49,7 @@ body {
   min-height: 0;
   gap: clamp(8px, 2vw, 30px);
   overflow: hidden;
+  border: 15px solid red; 
 }
 
 .item-button {
@@ -55,7 +57,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  flex: 1 1 0;
+  flex: 1 0 0;
   min-width: 0;
   height: 100%;
   max-width: 250px;
@@ -77,6 +79,7 @@ body {
   max-height: 100%;
 
   object-fit: contain;
+  border: 15px solid red; 
 }
 
 #counter {
@@ -134,11 +137,11 @@ body {
 }
 
 .spatula-button{
-  transform: translate(-150px,200px);
+  transform: translate(-150px,120px);
 }
 
 .knife-button{
-  transform: translate(-550px,220px);
+  transform: translate(-550px,120px);
 }
 
 .mixer-button{
@@ -146,7 +149,7 @@ body {
 }
 
 .bread-button{
-  transform: translate(0px,0px) scale(1.2);
+  transform: translate(-50px,-30px) scale(1.2);
 }
 
 .butter-button{
