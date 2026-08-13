@@ -97,12 +97,13 @@ body {
 .item-button img {
   display: block;
 
-  width: 100%;
-  height: 100%;
+  width: 150%;
+  height: 150%;
 
   object-fit: contain;
 
   pointer-events: none;
+  border:5px solid red;
 }
 
 
@@ -112,49 +113,49 @@ body {
 
 /* PAN */
 .pan-button {
-  left: 52%;
-  top: 25%;
+  left: 60%;
+  top: 30%;
 }
 
 
 /* SPATULA */
 .spatula-button {
-  left: 39%;
+  left:25%;
   top: 50%;
 }
 
 
 /* KNIFE */
 .knife-button {
-  left: 17%;
+  left: 45%;
   top: 50%;
 }
 
 
 /* MIXER */
 .mixer-button {
-  left: 5%;
-  top: 35%;
+  left: 15%;
+  top: 75%;
 }
 
 
 /* BREAD */
 .bread-button {
-  left: 45%;
-  top: 45%;
+  left: 35%;
+  top: 40%;
 }
 
 
 /* BUTTER */
 .butter-button {
-  left: 68%;
-  top: 45%;
+  left: 85%;
+  top: 55%;
 }
 
 
 /* CHEESE */
 .cheese-button {
-  left: 64%;
+  left: 80%;
   top: 65%;
 }
 
@@ -162,13 +163,13 @@ body {
 /* FLOUR */
 .flour-button {
   left: 14%;
-  top: 25%;
+  top: 50%;
 }
 
 
 /* CHOPPING BOARD */
 .choppingboard-button {
-  left: 62%;
+  left: 35%;
   top: 70%;
 }
 
