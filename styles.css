@@ -1,5 +1,5 @@
 * {
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -11,10 +11,7 @@ body {
 }
 
 body {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto;
-  gap: 16px;
-  padding: 16px;
+  position: relative;
 
   background-image: url("kitchenbg.png");
   background-size: cover;
@@ -22,150 +19,234 @@ body {
   background-repeat: no-repeat;
 }
 
+
+/* =========================
+   TITLE
+   ========================= */
+
 .title {
-  width: fit-content;
-  max-width: 250px;
-  max-height:250px;
-  margin: 0 auto;
+  position: fixed;
+
+  top: 30px;
+  left: 8%;
+
+  margin: 0;
   padding: 10px;
+
+  max-width: 420px;
 
   color: #588a9f;
   background-color: #f0f8ff;
-  font-family: Verdana, sans-serif;
-  text-align: center;
-  postion: fixed;
 
-  transform: translateX(-400px);
+  font-family: Verdana, sans-serif;
+  font-size: clamp(20px, 2.2vw, 34px);
+  text-align: center;
+
+  z-index: 10;
 }
+
+
+/* =========================
+   GAME AREA
+   ========================= */
 
 .items {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+
+  left: 0;
+  top: 0;
 
   width: 100%;
-  min-width: 0;
-  min-height: 0;
-  gap: clamp(8px, 2vw, 30px);
+  height: 100%;
+
   overflow: hidden;
-  border: 15px solid red; 
 }
 
+
+/* =========================
+   BUTTONS
+   ========================= */
+
 .item-button {
+  position: absolute;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
-  flex: 1 0 0;
-  min-width: 0;
-  height: 100%;
-  max-width: 250px;
-  max-height: 100px;
+  width: clamp(90px, 10vw, 180px);
+  height: clamp(70px, 10vh, 130px);
 
   padding: 0;
+
   border: none;
   background: transparent;
+
   cursor: pointer;
-  overflow: hidden;
+
+  z-index: 5;
 }
+
+
+/* IMAGE ONLY
+   This makes the picture bigger
+   WITHOUT making the clickable
+   area bigger.
+*/
 
 .item-button img {
   display: block;
 
   width: 100%;
   height: 100%;
-  max-width:250px;
-  max-height: 100%;
 
   object-fit: contain;
-  border: 15px solid red; 
+
+  pointer-events: none;
 }
 
+
+/* =========================
+   ITEM POSITIONS
+   ========================= */
+
+/* PAN */
+.pan-button {
+  left: 52%;
+  top: 25%;
+}
+
+
+/* SPATULA */
+.spatula-button {
+  left: 39%;
+  top: 50%;
+}
+
+
+/* KNIFE */
+.knife-button {
+  left: 17%;
+  top: 50%;
+}
+
+
+/* MIXER */
+.mixer-button {
+  left: 5%;
+  top: 35%;
+}
+
+
+/* BREAD */
+.bread-button {
+  left: 45%;
+  top: 45%;
+}
+
+
+/* BUTTER */
+.butter-button {
+  left: 68%;
+  top: 45%;
+}
+
+
+/* CHEESE */
+.cheese-button {
+  left: 64%;
+  top: 65%;
+}
+
+
+/* FLOUR */
+.flour-button {
+  left: 14%;
+  top: 25%;
+}
+
+
+/* CHOPPING BOARD */
+.choppingboard-button {
+  left: 62%;
+  top: 70%;
+}
+
+
+/* =========================
+   COUNTER
+   ========================= */
+
 #counter {
-  position: fixed; 
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 10px;
+  position: fixed;
 
   top: 20px;
   right: 30px;
 
+  width: fit-content;
+  max-width: 250px;
+
+  margin: 0;
+  padding: 10px;
+
   color: black;
   background-color: rgb(115, 160, 175);
+
+  font-family: Arial, sans-serif;
   text-align: center;
+
+  z-index: 20;
 }
 
-/* Messages appear over the page without changing its layout. */
+
+/* =========================
+   POPUPS
+   ========================= */
+
 .alertPopUp,
 .wrongAnswer,
 .Congrats {
   position: fixed;
+
   top: 50%;
   left: 50%;
+
   transform: translate(-50%, -50%);
 
-  background: rgb(216, 140, 223);
-  padding: 50px 70px;
+  width: min(80%, 600px);
+
+  padding: 40px;
+
   border-radius: 25px;
+  border: 4px solid #850b6a;
+
   text-align: center;
 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 
-  border: 4px solid #850b6a;
-
   z-index: 9999;
 }
 
-.wrongAnswer {
-  background-color: red;
-}
 
-.Congrats {
-  font-family:helvetica, sans-serif;
-  font-size:24px;
-  background-color: rgb(187, 171, 219);
-}
+/* ALREADY SELECTED */
 
 .alertPopUp {
   background-color: aquamarine;
 }
 
-.pan-button{
-  transform: translate(850px,-105px);
+
+/* WRONG ANSWER */
+
+.wrongAnswer {
+  background-color: red;
 }
 
-.spatula-button{
-  transform: translate(-150px,120px);
-}
 
-.knife-button{
-  transform: translate(-550px,120px);
-}
+/* CONGRATULATIONS */
 
-.mixer-button{
-  transform: translate(-850px,0px);
-}
+.Congrats {
+  font-family: Helvetica, sans-serif;
+  font-size: clamp(18px, 2vw, 24px);
 
-.bread-button{
-  transform: translate(-50px,-30px) scale(1.2);
+  background-color: rgb(187, 171, 219);
 }
-
-.butter-button{
-  transform: translate(420px,30px);
-}
-
-.cheese-button{
-  transform: translate(350px,125px);
- 
-}
-
-.flour-button{
-  transform: translate(-600px,-100px);
-}
-
-.choppingboard-button{
-  transform: translate(300px,150px);
-}
-
