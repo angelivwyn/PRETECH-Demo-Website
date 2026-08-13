@@ -10,19 +10,52 @@
   <body>
     <h1 class="title">Pick the correct items!</h1>
 
-    <div class="items">
+        <div class="items">
       <button class="item-button pan-button" type="button" onclick="Pan()">
         <img src="pan.png" alt="Frying pan" />
       </button>
 
-      <button class="item-button" type="button" onclick="Pot()">
+
+      <button class="item-button choppingboard-button" type="button" onclick="Choppingboard()">
         <img src="choppingboard.png" alt="Chopping board" />
       </button>
 
-      <button class="item-button" type="button" onclick="Spatula()">
-        <img src="choppingboard.png" alt="Spatula" />
+
+      <button class="item-button spatula-button" type="button" onclick="Spatula()">
+        <img src="spatula.png" alt="Spatula" />
       </button>
+
+
+      <button class="item-button bread-button" type="button" onclick="Bread()">
+        <img src="bread.png" alt="bread" />
+      </button>
+
+
+      <button class="item-button butter-button" type="button" onclick="Butter()">
+        <img src="butter.png" alt="butter" />
+      </button>
+
+
+      <button class="item-button cheese-button" type="button" onclick="Cheese()">
+        <img src="cheese.png" alt="cheese" />
+      </button>
+
+
+      <button class="item-button knife-button" type="button" onclick="Knife()">
+        <img src="knife.png" alt="knife" />
+      </button>
+
+      <button class="item-button mixer-button" type="button" onclick="Mixer()">
+        <img src="mixer.png" alt="mixer" />
+      </button>
+
+       <button class="item-button flour-button" type="button" onclick="Flour()">
+        <img src="flour.png" alt="flour" />
+      </button>
+
+
     </div>
+
 
     <h2 id="counter">You have 0 things selected</h2>
 
@@ -41,13 +74,20 @@
     <div id="Congrats" class="Congrats" style="display: none">
       Congratulations! You have all the materials you need. You may now proceed
       to the next page.
+      <a href="https://lac-b26.my.canva.site/pretech-main-website/page-6">Click here to continue!!</a>
     </div>
 
     <script>
       let clicks = 0;
       let pan = 0;
-      let pot = 0;
+      let choppingboard = 0;
       let spatula = 0;
+      let bread=0;
+      let butter=0;
+      let cheese=0;
+      let knife=0;
+      let mixer=0;
+      let flour=0;
 
       function showAlert() {
         const popup = document.getElementById("chooseAnotherItemPopUp");
@@ -55,7 +95,7 @@
 
         setTimeout(() => {
           popup.style.display = "none";
-        }, 3000);
+        }, 1000);
       }
 
       function wrongAnswershow() {
@@ -64,7 +104,7 @@
 
         setTimeout(() => {
           wrongAnswer.style.display = "none";
-        }, 2000);
+        }, 1000);
       }
 
       function updateCounter() {
@@ -72,42 +112,103 @@
           "You have " + clicks + " in cart";
       }
 
-      function Pan() {
-        pan++;
-
-        if (pan === 1) {
+    function Bread() {
+        bread++;
+        if (bread == 1) {
           clicks++;
-          updateCounter();
           checkWin();
+          updateCounter();
         } else {
           showAlert();
         }
       }
 
-      function Pot() {
-        pot++;
+      function Butter() {
+        butter++;
+        if (butter == 1) {
+          clicks++;
+          checkWin();
+          updateCounter();
+        } else {
+          showAlert();
+        }
+      }
 
-        if (pot === 1) {
+      function Cheese() {
+        cheese++;
+        if (cheese == 1) {
+          clicks++;
+          checkWin();
+          updateCounter();
+        } else {
+          showAlert();
+        }
+      }
+
+      function Choppingboard() {
+        choppingboard++;
+        if (choppingboard == 1) {
+          clicks++;
+          checkWin();
+          updateCounter();
+        } else {
+          showAlert();
+        }
+      }
+
+      function Knife() {
+        knife++;
+        if (knife == 1) {
+          clicks++;
+          checkWin();
+          updateCounter();
+        } else {
+          showAlert();
+        }
+      }
+
+      function Mixer() {
+        mixer++;
+        if (mixer == 1) {
           wrongAnswershow();
         } else {
           showAlert();
         }
       }
 
+      function Flour() {
+        flour++;
+        if (flour == 1) {
+          wrongAnswershow();
+        } else {
+          showAlert();
+        }
+      }
+
+      function Pan() {
+        pan++;
+        if (pan == 1) {
+          clicks++;
+          checkWin();
+          updateCounter();
+        } else {
+          showAlert();
+        }
+      }
+      
       function Spatula() {
         spatula++;
-
-        if (spatula === 1) {
+        if (spatula == 1) {
           clicks++;
-          updateCounter();
           checkWin();
+          updateCounter();
         } else {
           showAlert();
         }
       }
 
       function checkWin() {
-        if (clicks === 2) {
+        if (clicks ==7) {
           setTimeout(() => {
             document.getElementById("Congrats").style.display = "block";
           }, 2000);
